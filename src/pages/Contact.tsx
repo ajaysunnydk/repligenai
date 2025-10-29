@@ -74,7 +74,7 @@ export default function Contact() {
                     href="mailto:info@repligenai.net"
                     className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                   >
-                    contact@repligenai.net
+                    info@repligenai.net
                   </a>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function Contact() {
                     href="tel:+19134487265"
                     className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                   >
-                    +1 (555) 123-4567
+                    +1 (913) 448-7265
                   </a>
                 </div>
               </div>
