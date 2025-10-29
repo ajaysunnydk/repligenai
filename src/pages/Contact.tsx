@@ -71,7 +71,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
                   <a
-                    href="mailto:contact@repligenai.net"
+                    href="mailto:info@repligenai.net"
                     className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                   >
                     contact@repligenai.net
@@ -86,7 +86,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
                   <a
-                    href="tel:+15551234567"
+                    href="tel:+19134487265"
                     className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                   >
                     +1 (555) 123-4567
