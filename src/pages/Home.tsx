@@ -1,203 +1,161 @@
-import { ArrowRight, Clock, Brain, Shield, MapPin, Database, BarChart3, Bot, Cloud, Server, Code, Briefcase, Lock } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
 }
 
 export default function Home({ onNavigate }: HomeProps) {
-  const highlights = [
-    {
-      icon: Clock,
-      title: '48-Hour Shortlists',
-      description: 'Fast turnaround on qualified candidates without compromising quality',
-    },
-    {
-      icon: Brain,
-      title: 'AI-Assisted Sourcing',
-      description: 'Smart algorithms identify top talent matched to your specific needs',
-    },
-    {
-      icon: Shield,
-      title: 'Senior Technical Screening',
-      description: 'Expert engineers evaluate candidates with rigorous technical assessments',
-    },
-    {
-      icon: MapPin,
-      title: 'U.S. Focus',
-      description: 'Specialized in U.S.-based talent for domestic companies',
-    },
-  ];
-
-  const capabilities = [
-    { icon: Database, title: 'Data Engineering', color: 'cyan' },
-    { icon: BarChart3, title: 'Data Science', color: 'cyan' },
-    { icon: Bot, title: 'Analytics', color: 'cyan' },
-    { icon: Brain, title: 'AI/ML', color: 'cyan' },
-    { icon: Server, title: 'MLOps', color: 'cyan' },
-    { icon: Cloud, title: 'DevOps', color: 'cyan' },
-    { icon: Cloud, title: 'AWS', color: 'cyan' },
-    { icon: Cloud, title: 'Azure', color: 'cyan' },
-    { icon: Cloud, title: 'GCP', color: 'cyan' },
-    { icon: Code, title: 'Java', color: 'cyan' },
-    { icon: Code, title: '.NET', color: 'cyan' },
-    { icon: Briefcase, title: 'SAP', color: 'cyan' },
-    { icon: Briefcase, title: 'ServiceNow', color: 'cyan' },
-    { icon: Lock, title: 'Cybersecurity', color: 'cyan' },
-  ];
-
-  const process = [
-    {
-      number: '01',
-      title: 'Discover',
-      description: 'We learn about your team, culture, and exact technical requirements',
-    },
-    {
-      number: '02',
-      title: 'Source',
-      description: 'AI-powered search combined with human insights finds the best matches',
-    },
-    {
-      number: '03',
-      title: 'Select',
-      description: 'Senior engineers screen candidates before presenting your shortlist',
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="pt-32 pb-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              Hire exceptional tech talent—without the noise
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
-              AI-assisted sourcing + rigorous human screening for U.S. companies
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => onNavigate('contact')}
-                className="px-8 py-4 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
-              >
-                Contact Us
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => onNavigate('services')}
-                className="px-8 py-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-lg transition-colors"
-              >
-                Explore Services
-              </button>
+    <div className="bg-black text-white overflow-hidden">
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center justify-center px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-900 to-black" />
+
+        <div className="relative z-10 max-w-5xl text-center">
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-tight leading-tight">
+            Hire exceptional <br />
+            <span className="bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent">
+              tech talent
+            </span>
+            <br /> without the noise
+          </h1>
+
+          <p className="mt-8 text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto">
+            AI-assisted sourcing combined with rigorous human screening — built
+            for U.S. companies that care about quality, speed, and fit.
+          </p>
+
+          <div className="mt-12 flex justify-center gap-4">
+            <button
+              onClick={() => onNavigate("contact")}
+              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:bg-neutral-200 transition"
+            >
+              Start hiring
+              <ArrowRight size={16} />
+            </button>
+
+            <button
+              onClick={() => onNavigate("services")}
+              className="rounded-full border border-neutral-700 px-6 py-3 text-sm text-neutral-300 hover:border-neutral-500 transition"
+            >
+              Explore services
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* HIGHLIGHTS */}
+      <section className="py-32 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
+          {[
+            {
+              title: "48-Hour Shortlists",
+              desc: "Qualified candidates delivered fast — without sacrificing depth or quality."
+            },
+            {
+              title: "AI-Assisted Sourcing",
+              desc: "Smart algorithms surface the right profiles, not just more resumes."
+            },
+            {
+              title: "Senior Screening",
+              desc: "Experienced engineers vet candidates through real technical evaluation."
+            },
+            {
+              title: "U.S. Focused Talent",
+              desc: "Specialized in U.S.-based professionals for domestic teams."
+            }
+          ].map((item) => (
+            <div key={item.title} className="space-y-4">
+              <h3 className="text-xl font-medium">{item.title}</h3>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                {item.desc}
+              </p>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className="py-20 px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {highlights.map((highlight) => {
-              const Icon = highlight.icon;
-              return (
-                <div
-                  key={highlight.title}
-                  className="bg-white dark:bg-gray-900 p-8 rounded-2xl hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {highlight.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      {/* CAPABILITIES */}
+      <section className="py-24 px-6 bg-neutral-950 border-t border-neutral-800">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-semibold tracking-tight">
+            Capabilities across modern stacks
+          </h2>
+          <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
+            We help you hire talent across data, cloud, AI, and enterprise
+            platforms.
+          </p>
 
-      <div className="py-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Capabilities
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Expert talent across modern tech stacks
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {capabilities.map((capability) => {
-              const Icon = capability.icon;
-              return (
-                <div
-                  key={capability.title}
-                  className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-cyan-300 dark:hover:border-cyan-600 hover:shadow-md transition-all group"
-                >
-                  <Icon className="w-8 h-8 text-gray-600 dark:text-gray-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 mb-4 transition-colors" />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">
-                    {capability.title}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      <div className="py-20 px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              How It Works
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Three simple steps to exceptional talent
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {process.map((step, index) => (
-              <div key={step.number} className="relative">
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-cyan-600 text-white rounded-full text-3xl font-bold mb-6">
-                    {step.number}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                {index < process.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gray-300 dark:bg-gray-700" />
-                )}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-neutral-300">
+            {[
+              "Data Engineering",
+              "Data Science",
+              "AI / ML",
+              "Analytics",
+              "Cloud & DevOps",
+              "MLOps",
+              "Cybersecurity",
+              "Enterprise Platforms"
+            ].map((cap) => (
+              <div
+                key={cap}
+                className="rounded-2xl border border-neutral-800 py-6"
+              >
+                {cap}
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="py-20 px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Ready to build your team?
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-            Let's discuss your hiring needs and find the right talent for your organization.
-          </p>
-          <button
-            onClick={() => onNavigate('contact')}
-            className="px-8 py-4 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-lg transition-colors inline-flex items-center gap-2"
-          >
-            Get Started
-            <ArrowRight className="w-5 h-5" />
-          </button>
+      {/* PROCESS */}
+      <section className="py-32 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 text-center">
+          {[
+            {
+              step: "01",
+              title: "Discover",
+              desc: "We understand your team, culture, and exact technical needs."
+            },
+            {
+              step: "02",
+              title: "Source",
+              desc: "AI-driven sourcing combined with human insight finds the best match."
+            },
+            {
+              step: "03",
+              title: "Select",
+              desc: "Senior engineers screen candidates before you see the shortlist."
+            }
+          ].map((item) => (
+            <div key={item.step}>
+              <div className="text-3xl font-semibold text-neutral-500 mb-6">
+                {item.step}
+              </div>
+              <h3 className="text-2xl font-medium mb-4">{item.title}</h3>
+              <p className="text-neutral-400">{item.desc}</p>
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          Ready to build your team?
+        </h2>
+        <p className="mt-6 text-neutral-400 max-w-xl mx-auto">
+          Let’s discuss your hiring needs and deliver talent that actually fits.
+        </p>
+
+        <button
+          onClick={() => onNavigate("contact")}
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-white text-black px-8 py-4 text-sm font-medium hover:bg-neutral-200 transition"
+        >
+          Get started
+          <ArrowRight size={16} />
+        </button>
+      </section>
     </div>
   );
 }

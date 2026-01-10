@@ -8,6 +8,7 @@ import Industries from './pages/Industries';
 import Careers from './pages/Careers';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import CursorGlow from './components/CursorGlow';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <ThemeProvider>
+      <CursorGlow />
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
         <Header currentPage={currentPage} onNavigate={setCurrentPage} />
         <main>{renderPage()}</main>
