@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 interface HeaderProps {
   currentPage: string;
@@ -8,108 +7,90 @@ interface HeaderProps {
 }
 
 export default function Header({ currentPage, onNavigate }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'industries', label: 'Industries' },
-    { id: 'careers', label: 'Careers' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' },
+  const nav = [
+    { id: "services", label: "Services" },
+    { id: "industries", label: "Industries" },
+    { id: "careers", label: "Careers" },
+    { id: "about", label: "About" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm'
-          : 'bg-transparent'
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all ${
+          scrolled
+            ? "bg-black/70 backdrop-blur-xl border-b border-white/10"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
-            onClick={() => onNavigate('home')}
-            className="font-display text-2xl font-bold text-gray-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            onClick={() => onNavigate("home")}
+            className="text-lg font-semibold tracking-tight text-white"
           >
-            RepligenAi
+            Repligen<span className="text-neutral-400">AI</span>
           </button>
 
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+          <nav className="hidden md:flex items-center gap-8">
+            {nav.map((item) => (
               <button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm transition-colors ${
                   currentPage === item.id
-                    ? 'text-cyan-600 dark:text-cyan-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400'
+                    ? "text-white"
+                    : "text-neutral-400 hover:text-white"
                 }`}
               >
                 {item.label}
               </button>
             ))}
-          </div>
+          </nav>
 
-          <div className="flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              )}
-            </button>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-              )}
-            </button>
-          </div>
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden text-neutral-300 hover:text-white"
+          >
+            <Menu size={22} />
+          </button>
         </div>
+      </header>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
-            {navItems.map((item) => (
+      {open && (
+        <div className="fixed inset-0 z-50 bg-black text-white">
+          <div className="flex justify-between items-center h-20 px-6">
+            <span className="text-lg font-semibold">RepligenAI</span>
+            <button onClick={() => setOpen(false)}>
+              <X size={24} />
+            </button>
+          </div>
+
+          <div className="px-6 pt-10 space-y-6">
+            {nav.map((item) => (
               <button
                 key={item.id}
                 onClick={() => {
                   onNavigate(item.id);
-                  setIsMobileMenuOpen(false);
+                  setOpen(false);
                 }}
-                className={`block w-full text-left px-4 py-3 text-base font-medium transition-colors ${
-                  currentPage === item.id
-                    ? 'text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
-                }`}
+                className="block text-2xl font-medium tracking-tight text-neutral-300 hover:text-white"
               >
                 {item.label}
               </button>
             ))}
           </div>
-        )}
-      </nav>
-    </header>
+        </div>
+      )}
+    </>
   );
 }
