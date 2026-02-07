@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Industries from './pages/Industries';
@@ -34,11 +32,9 @@ function App() {
 
   return (
     <ThemeProvider>
-      <CursorGlow />
+      {/* <CursorGlow /> */}
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
-        <Header currentPage={currentPage} onNavigate={setCurrentPage} />
         <main>{renderPage()}</main>
-        <Footer onNavigate={setCurrentPage} />
       </div>
     </ThemeProvider>
   );
