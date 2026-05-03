@@ -1,59 +1,81 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const industries = [
-  {
-    title: "Financial Services",
-    desc: "AI-powered fraud detection, analytics platforms, and secure cloud infrastructure."
-  },
-  {
-    title: "Healthcare",
-    desc: "Data-driven diagnostics, intelligent automation, and secure patient platforms."
-  },
-  {
-    title: "Retail & E-Commerce",
-    desc: "Customer intelligence, recommendation engines, and scalable commerce systems."
-  },
-  {
-    title: "Manufacturing",
-    desc: "Predictive maintenance, IoT integrations, and operational intelligence."
-  }
+  { title: "Financial Services", bg: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop" },
+  { title: "Healthcare & Life Sciences", bg: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" },
+  { title: "Retail & Consumer", bg: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop" },
+  { title: "Manufacturing", bg: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" },
+  { title: "Technology & SaaS", bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" },
+  { title: "Telecom & Media", bg: "https://images.unsplash.com/photo-1517420704952-d9f39741e815?q=80&w=800&auto=format&fit=crop" },
+  { title: "Energy & Utilities", bg: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" },
+  { title: "Transportation", bg: "https://images.unsplash.com/photo-1586528116311-ad8ed7c159ad?q=80&w=800&auto=format&fit=crop" }
 ];
 
 export default function IndustrySolutions() {
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-32 bg-enterprise-dark border-t border-white/5 relative">
+      <div className="absolute left-0 top-0 w-1/3 h-1/2 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-semibold text-center"
-        >
-          Industry Solutions
-        </motion.h2>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        <p className="mt-6 text-neutral-600 text-center max-w-3xl mx-auto">
-          We partner with organizations across industries to design and deploy
-          intelligent technology solutions tailored to sector-specific challenges.
-        </p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <h4 className="uppercase text-brand-400 tracking-[0.2em] mb-4 text-sm font-semibold">
+              Global Relevance
+            </h4>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+              Industry Solutions <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Built for Scale</span>
+            </h2>
+          </motion.div>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <motion.div
+            initial={{ opacity: 0, opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <button className="flex items-center gap-3 text-brand-400 font-bold tracking-wide uppercase text-sm hover:text-brand-300 transition-colors">
+              View All Industries <ArrowRight size={18} />
+            </button>
+          </motion.div>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
           {industries.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              className="bg-neutral-50 p-8 border hover:shadow-lg transition"
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="group relative h-[300px] overflow-hidden rounded-xl border border-white/10 cursor-pointer"
             >
-              <h3 className="text-lg font-semibold mb-4 text-blue-800">
-                {item.title}
-              </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed">
-                {item.desc}
-              </p>
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-40 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-60"
+                style={{ backgroundImage: `url(${item.bg})` }}
+              ></div>
+              
+              {/* Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-t from-enterprise-darker via-enterprise-darker/60 to-transparent"></div>
+              
+              {/* Content */}
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <div className="w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center mb-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 border border-brand-500/30">
+                  <ArrowRight size={18} className="text-brand-400" />
+                </div>
+                <h3 className="text-xl font-display font-semibold text-white tracking-wide">
+                  {item.title}
+                </h3>
+              </div>
             </motion.div>
           ))}
 

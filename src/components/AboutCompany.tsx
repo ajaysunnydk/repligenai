@@ -1,59 +1,60 @@
 import { motion } from "framer-motion";
-import photo1 from "../assets/photos/photo1.jpg";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutCompany() {
   return (
-    <section className="py-28 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+    <section className="py-32 bg-enterprise-darker relative overflow-hidden">
+      <div className="absolute right-0 top-1/2 w-1/2 h-full bg-brand-500/5 blur-[150px] rounded-full -translate-y-1/2 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center relative z-10">
         
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden shadow-xl"
+          className="relative group"
         >
-          <img
-            src={photo1}
-            alt="About Company"
-            className="w-full h-full object-cover"
-          />
+          <div className="absolute -inset-4 bg-gradient-to-r from-brand-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-[4/5] bg-enterprise-dark">
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1740&auto=format&fit=crop"
+              alt="Architecture and Structure"
+              className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:scale-105 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-enterprise-darker via-transparent to-transparent"></div>
+          </div>
         </motion.div>
 
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <p className="uppercase text-blue-500 tracking-widest text-sm font-medium">
-            About Company
+          <p className="uppercase text-brand-400 tracking-[0.2em] mb-4 text-sm font-semibold">
+            About RepligenAI
           </p>
 
-          <h2 className="mt-6 text-4xl font-semibold leading-tight">
-            Empowering Businesses With
-            Intelligent Software Solutions
+          <h2 className="mt-6 text-4xl md:text-5xl font-display font-bold leading-tight text-white">
+            Building Enterprise Products with <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Structural Integrity</span>
           </h2>
 
-          <p className="mt-8 text-neutral-600 leading-relaxed">
-            For years, we have partnered with forward-thinking organizations
-            to modernize infrastructure, implement artificial intelligence,
-            and build scalable digital platforms.
+          <p className="mt-8 text-slate-400 leading-relaxed text-lg">
+            At RepligenAI, we engineer long-horizon SaaS platforms designed for durability, security, scale, and enterprise evolution. Our foundation is built around technical rigor, architectural integrity, and accountable innovation.
           </p>
 
-          <p className="mt-6 text-neutral-600 leading-relaxed">
-            Our mission is to transform business operations through strategic
-            technology integration — combining automation, cloud engineering,
-            and advanced analytics to deliver measurable results.
+          <p className="mt-6 text-slate-400 leading-relaxed text-lg mb-10 border-l-2 border-brand-500/30 pl-6">
+            We are a platform-building ecosystem where engineering, infrastructure, governance, and product strategy operate together within a unified enterprise framework.
           </p>
 
-          <ul className="mt-10 space-y-4">
+          <ul className="space-y-6 mb-12">
             {[
-              "Modernizing legacy systems with intelligent automation",
-              "Building scalable enterprise applications",
-              "Designing intuitive and high-performance digital platforms"
+              "Enterprise Product Development with Long-Term Thinking",
+              "Structured oversight ensuring enterprise integrity",
+              "Architecting scalable digital ecosystems"
             ].map((item, index) => (
               <motion.li
                 key={item}
@@ -61,16 +62,19 @@ export default function AboutCompany() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="flex items-start gap-4"
+                className="flex items-center gap-4 text-slate-300 font-medium"
               >
-                <div className="w-6 h-6 bg-blue-700 rounded-full mt-1" />
-                <span className="text-neutral-700">{item}</span>
+                <div className="w-8 h-8 rounded bg-brand-500/10 flex items-center justify-center shrink-0 border border-brand-500/20">
+                  <div className="w-2 h-2 rounded-full bg-brand-400"></div>
+                </div>
+                {item}
               </motion.li>
             ))}
           </ul>
 
-          <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 font-medium transition text-white mt-10">
-            About More →
+          <button className="group flex items-center gap-3 text-brand-400 font-bold tracking-wide uppercase text-sm hover:text-brand-300 transition-colors">
+            Discover Our Foundation
+            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
           </button>
         </motion.div>
       </div>

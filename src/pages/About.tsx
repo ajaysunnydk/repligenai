@@ -1,195 +1,159 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
-import MainLayout from "../layout/MainLayout";
+import Footer from "../components/Footer";
+import { ArrowRight, Box, Shield, Zap } from "lucide-react";
 
-export default function About({ onNavigate }: AboutProps) {
+export default function About({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
-    <MainLayout onNavigate={onNavigate}>
-      <div className="bg-white text-neutral-900">
-
+    <>
+      <Navbar onNavigate={onNavigate} />
+      <div className="bg-enterprise-dark min-h-screen">
+        
         {/* HERO */}
-        <section className="bg-blue-900 text-white py-32">
-          <div className="max-w-7xl mx-auto px-6 text-center">
+        <section className="relative pt-40 pb-32 overflow-hidden border-b border-white/10">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-enterprise-darker via-enterprise-dark/90 to-enterprise-dark"></div>
+          
+          <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl md:text-6xl font-bold"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-5xl md:text-7xl font-display font-bold text-white mb-8 drop-shadow-lg"
             >
-              About RepliGenAI
+              Building Enterprise Products <br className="hidden md:block"/> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Structural Integrity</span>
             </motion.h1>
 
-            <p className="mt-8 text-blue-200 max-w-3xl mx-auto text-lg">
-              Delivering intelligent software and AI-driven solutions
-              that empower organizations to innovate, scale, and compete globally.
-            </p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="mt-8 text-slate-300 max-w-3xl mx-auto text-xl font-light leading-relaxed"
+            >
+              Enterprise product development requires long-term thinking, rigorous governance, and scalable architecture.
+            </motion.p>
           </div>
         </section>
 
-        {/* COMPANY STORY */}
-        <section className="py-28">
+        {/* DEFINING THE COMPANY */}
+        <section className="py-32 relative">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative group"
             >
+              <div className="absolute -inset-4 bg-gradient-to-br from-brand-500/20 to-blue-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
               <img
-                src="/about-team.jpg"
-                alt="Company"
-                className="rounded-2xl shadow-lg"
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1769&auto=format&fit=crop"
+                alt="Corporate Architecture"
+                className="relative rounded-2xl shadow-2xl border border-white/10 opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-semibold">
-                Our Journey
+              <h4 className="uppercase text-brand-400 tracking-[0.2em] mb-4 text-sm font-semibold">
+                What Defines Us
+              </h4>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">
+                Enterprise Product Development with <span className="italic font-light">Long-Term Thinking</span>
               </h2>
 
-              <p className="mt-8 text-neutral-600 leading-relaxed">
-                RepliGenAI was founded with a vision to bridge the gap between
-                artificial intelligence and real-world business transformation.
-                We combine engineering excellence with strategic insight to
-                deliver scalable, future-ready digital platforms.
+              <p className="text-slate-400 leading-relaxed text-lg mb-6">
+                RepligenAI exists to architect, develop, and govern enterprise-grade software systems that form the foundation of scalable organizations.
               </p>
 
-              <p className="mt-6 text-neutral-600 leading-relaxed">
-                Over the years, we’ve partnered with enterprises across industries,
-                helping them modernize infrastructure, implement AI solutions,
-                and build high-performance technology ecosystems.
+              <p className="text-slate-400 leading-relaxed text-lg mb-8 border-l-2 border-brand-500/30 pl-6">
+                We believe that software should not just solve immediate problems—it should be built with the structural foresight to handle future scale, security demands, and operational complexity.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* MISSION & VISION */}
-        <section className="py-28 bg-blue-50">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-
-            <div className="bg-white p-12 shadow-md border">
-              <h3 className="text-2xl font-semibold text-blue-800">
-                Our Mission
-              </h3>
-              <p className="mt-6 text-neutral-600 leading-relaxed">
-                To deliver intelligent, scalable, and secure technology solutions
-                that enable organizations to unlock new levels of efficiency,
-                innovation, and measurable growth.
-              </p>
+        {/* OUR FOUNDATION */}
+        <section className="py-32 bg-enterprise-darker relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+          
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <h4 className="uppercase text-brand-400 tracking-[0.2em] mb-4 text-sm font-semibold">
+                Core Principles
+              </h4>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+                Our Foundation
+              </h2>
             </div>
 
-            <div className="bg-white p-12 shadow-md border">
-              <h3 className="text-2xl font-semibold text-blue-800">
-                Our Vision
-              </h3>
-              <p className="mt-6 text-neutral-600 leading-relaxed">
-                To become a global leader in AI-powered digital transformation,
-                recognized for engineering excellence, integrity, and long-term
-                strategic partnerships.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CORE VALUES */}
-        <section className="py-28">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-
-            <h2 className="text-4xl font-semibold">
-              Our Core Values
-            </h2>
-
-            <div className="mt-16 grid md:grid-cols-4 gap-12">
-
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                "Innovation",
-                "Integrity",
-                "Excellence",
-                "Collaboration"
-              ].map((value) => (
-                <div
-                  key={value}
-                  className="border p-10 hover:shadow-lg transition"
+                {
+                  icon: <Box size={32} className="text-brand-400" />,
+                  title: "Architectural Rigor",
+                  desc: "We prioritize clean code, modular design, and scalable infrastructure to ensure systems can evolve without technical debt."
+                },
+                {
+                  icon: <Shield size={32} className="text-brand-400" />,
+                  title: "Security & Governance",
+                  desc: "Security is not an afterthought. It is embedded into our deployment pipelines, data structures, and operational workflows."
+                },
+                {
+                  icon: <Zap size={32} className="text-brand-400" />,
+                  title: "Operational Excellence",
+                  desc: "We build for high availability and performance, ensuring that our products meet the stringent demands of global enterprises."
+                }
+              ].map((value, idx) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.2, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="glass-dark p-10 hover:border-brand-500/30 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden"
                 >
-                  <h4 className="text-xl font-semibold text-blue-700">
-                    {value}
-                  </h4>
-                  <p className="mt-4 text-neutral-600 text-sm">
-                    We are committed to delivering measurable impact through
-                    forward-thinking technology and ethical business practices.
-                  </p>
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="mb-8 p-4 rounded-lg bg-white/5 inline-block border border-white/5">
+                      {value.icon}
+                    </div>
+                    <h4 className="text-2xl font-display font-semibold text-white mb-4">
+                      {value.title}
+                    </h4>
+                    <p className="text-slate-400 leading-relaxed">
+                      {value.desc}
+                    </p>
+                  </div>
+                </motion.div>
               ))}
-
             </div>
           </div>
         </section>
-
-        {/* TEAM
-      <section className="py-28 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-
-          <h2 className="text-4xl font-semibold">
-            Leadership Team
-          </h2>
-
-          <div className="mt-16 grid md:grid-cols-3 gap-12">
-
-            {[
-              {
-                name: "David Carter",
-                role: "Chief Executive Officer",
-                image: "/leader1.jpg"
-              },
-              {
-                name: "Sophia Martinez",
-                role: "Chief Technology Officer",
-                image: "/leader2.jpg"
-              },
-              {
-                name: "Michael Lee",
-                role: "Head of Engineering",
-                image: "/leader3.jpg"
-              }
-            ].map((member) => (
-              <div key={member.name} className="bg-white shadow-md p-6">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="rounded-lg mb-6"
-                />
-                <h4 className="text-lg font-semibold">
-                  {member.name}
-                </h4>
-                <p className="text-blue-600 text-sm mt-2">
-                  {member.role}
-                </p>
-              </div>
-            ))} */}
-
-        {/* </div>
-        </div>
-      </section> */}
 
         {/* CTA */}
-        <section className="py-24 bg-blue-900 text-white text-center">
-          <h2 className="text-4xl font-semibold">
-            Ready to Work With Us?
-          </h2>
-          <p className="mt-6 text-blue-200">
-            Let’s build intelligent systems that power your next phase of growth.
-          </p>
+        <section className="py-32 relative text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-900/20"></div>
+          <div className="max-w-3xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">
+              Why RepligenAI Exists
+            </h2>
+            <p className="text-xl text-slate-300 font-light mb-12">
+              To provide the engineering maturity required to run the future of global business operations.
+            </p>
 
-          <button className="mt-10 bg-white text-blue-900 px-8 py-3 font-medium hover:bg-blue-100 transition">
-            Contact Us →
-          </button>
+            <button className="bg-brand-500 hover:bg-brand-400 text-enterprise-darker px-10 py-5 text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center gap-3 mx-auto uppercase">
+              Join Our Vision <ArrowRight size={18} />
+            </button>
+          </div>
         </section>
 
       </div>
-    </MainLayout>
+      <Footer onNavigate={onNavigate} />
+    </>
   );
 }

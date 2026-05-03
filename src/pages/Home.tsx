@@ -21,7 +21,7 @@ export default function Home({ onNavigate }: any) {
       <IndustrySolutions />
       <CaseStudy />
       <Statistics />
-      <Footer />
+      <Footer onNavigate={onNavigate} />
     </>
   );
 }

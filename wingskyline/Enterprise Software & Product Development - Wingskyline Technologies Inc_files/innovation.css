@@ -1,0 +1,523 @@
+﻿/* =======================================================
+   Wingskyline Innovation Page
+   Enterprise SaaS Corporate Styling
+======================================================= */
+
+/*.wk-innovation-hero {
+    background: linear-gradient(120deg,#f8fafc 0%,#ffffff 55%,#f3f4f6 100%);
+    border-bottom: 1px solid #e5e7eb;
+}*/
+
+/* Tag Pill */
+
+/*.wk-pill {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    background: rgba(17,24,39,0.06);
+    color: #111827;
+}*/
+
+/* Headline */
+
+/*.wk-h1 {
+    font-size: clamp(32px,3vw,48px);
+    font-weight: 900;
+    line-height: 1.12;
+    color: #111827;
+    letter-spacing: -0.6px;
+}*/
+
+/* Lead text */
+
+/*.wk-lead {
+    font-size: 1.1rem;
+    color: #4b5563;
+    line-height: 1.7;
+    max-width: 900px;
+}*/
+
+/* Badges */
+
+/*.wk-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wk-chip {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #eef2ff;
+    color: #1f2937;
+}*/
+
+/* Sections */
+
+/*.wk-section {
+    background: #ffffff;
+}
+
+.wk-alt {
+    background: #f9fafb;
+}*/
+
+/* Section Head */
+
+/*.wk-section-head {
+    max-width: 900px;
+}
+
+.wk-h2 {
+    font-size: clamp(24px,2vw,30px);
+    font-weight: 900;
+    color: #111827;
+    letter-spacing: -0.4px;
+}
+
+.wk-sub {
+    margin-top: 10px;
+    color: #6b7280;
+    line-height: 1.7;
+}*/
+
+/* Cards */
+
+/*.wk-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: all .2s ease;
+}
+
+    .wk-card:hover {
+        transform: translateY(-4px);
+        border-color: #d1d5db;
+        box-shadow: 0 14px 38px rgba(17,24,39,0.08);
+    }*/
+
+
+/* Innovation Card Icon */
+
+/*.wk-innovation-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111827;
+    font-size: 20px;
+    margin-bottom: 14px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.wk-card:hover .wk-innovation-icon {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}*/
+
+
+/* Card headings */
+
+/*.wk-h5 {
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.wk-sub2 {
+    color: #6b7280;
+    line-height: 1.6;
+}*/
+
+/* Hero Card */
+
+/*.wk-hero-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+}*/
+
+/* List */
+
+/*.wk-list {
+    margin-top: 10px;
+    padding-left: 18px;
+    color: #374151;
+    line-height: 1.8;
+}*/
+
+/* Mini Badge (icon + number) */
+
+/*.wk-mini-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    color: #374151;
+}
+
+    .wk-mini-badge i {
+        font-size: 20px;
+        color: #111827;
+    }
+
+    .wk-mini-badge span {
+        font-size: 12px;
+        background: #111827;
+        color: white;
+        padding: 2px 7px;
+        border-radius: 999px;
+    }*/
+
+/* Media Image */
+
+/*.wk-media {
+    position: relative;
+}
+
+.wk-img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+.wk-media-note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #6b7280;
+}*/
+
+/* CTA Section */
+
+/*.wk-cta {
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.wk-cta-inner {
+    background: linear-gradient(120deg,#f8fafc 0%,#ffffff 55%,#f3f4f6 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.wk-cta-title {
+    font-weight: 900;
+    color: #111827;
+}
+
+.wk-cta-sub {
+    color: #6b7280;
+    line-height: 1.6;
+    max-width: 700px;
+}*/
+
+/* =======================================================
+   Wingskyline Innovation Page
+   Enterprise SaaS Corporate Styling
+======================================================= */
+
+.wk-innovation-hero {
+    background: linear-gradient(120deg, #f8fafc 0%, #ffffff 55%, #f3f4f6 100%);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Tag Pill */
+
+.wk-pill {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    background: rgba(17,24,39,0.06);
+    color: #111827;
+}
+
+/* Headline */
+
+.wk-h1 {
+    font-size: clamp(32px, 3vw, 48px);
+    font-weight: 900;
+    line-height: 1.12;
+    color: #111827;
+    letter-spacing: -0.6px;
+    margin: 0;
+}
+
+/* Lead text */
+
+.wk-lead {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.82;
+    max-width: 920px;
+}
+
+/* Badges */
+
+.wk-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wk-chip {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #111827;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 12px;
+    box-shadow: 0 10px 22px rgba(17,24,39,0.04);
+}
+
+/* Sections */
+
+.wk-section {
+    background: #ffffff;
+}
+
+.wk-alt {
+    background: #f9fafb;
+}
+
+/* Section Head */
+
+.wk-section-head {
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.wk-h2 {
+    font-size: clamp(24px, 2vw, 30px);
+    font-weight: 900;
+    color: #111827;
+    letter-spacing: -0.4px;
+    line-height: 1.22;
+    margin: 0;
+}
+
+.wk-sub {
+    margin-top: 12px;
+    color: #6b7280;
+    line-height: 1.82;
+    font-size: 1rem;
+    max-width: 920px;
+}
+
+/* Cards */
+
+.wk-card {
+    background: #ffffff;
+    border: 1px solid #eef2f7;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+    .wk-card:hover {
+        transform: translateY(-4px);
+        border-color: #e5e7eb;
+        box-shadow: 0 18px 40px rgba(17,24,39,0.08);
+    }
+
+/* Innovation Icon */
+
+.wk-innovation-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: #ffffff;
+    font-size: 26px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all .25s ease;
+    margin-bottom: 16px;
+}
+
+.wk-card:hover .wk-innovation-icon {
+    transform: translateY(-3px);
+}
+
+/* Card headings */
+
+.wk-h5 {
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 10px;
+    font-size: 1.08rem;
+    line-height: 1.4;
+}
+
+.wk-sub2 {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.8;
+    font-size: 0.97rem;
+}
+
+/* Hero Card */
+
+.wk-hero-card {
+    background: #ffffff;
+    border: 1px solid #eef2f7;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+}
+
+/* List */
+
+.wk-list {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    color: #374151;
+    line-height: 1.8;
+}
+
+/* Media Image */
+
+.wk-media {
+    background: #f9fafb;
+    border: 1px solid #eef2f7;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+}
+
+.wk-img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.wk-media-note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+
+.wk-cta {
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.wk-cta-inner {
+    background: linear-gradient(120deg, #f8fafc 0%, #ffffff 55%, #f3f4f6 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.wk-cta-title {
+    font-weight: 900;
+    color: #111827;
+    margin: 0 0 6px;
+}
+
+.wk-cta-sub {
+    color: #6b7280;
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+@media (max-width: 991.98px) {
+    .wk-h1 {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .wk-h2 {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+}
+
+/* =========================================
+   Innovation Media Panel (AI Image Section)
+   ========================================= */
+
+.wk-innovation-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: all .25s ease;
+}
+
+    .wk-innovation-media:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(17,24,39,0.10);
+    }
+
+    /* subtle glow effect */
+
+    .wk-innovation-media::before {
+        content: "";
+        position: absolute;
+        inset: -30%;
+        background: radial-gradient(circle at center, rgba(37,99,235,0.08), transparent 60%);
+        z-index: 0;
+    }
+
+    /* image */
+
+    .wk-innovation-media img {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+/* overlay label */
+
+.wk-media-overlay {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(17,24,39,0.8);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    z-index: 2;
+}

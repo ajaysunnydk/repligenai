@@ -1,0 +1,362 @@
+﻿/* =========================================================
+   WINGSKYLINE CONTACT PAGE
+   ========================================================= */
+
+.wk-contact-hero {
+    background: linear-gradient(120deg, #f8fafc 0%, #ffffff 55%, #f3f4f6 100%);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.wk-pill {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 12px;
+    background: rgba(17,24,39,0.06);
+    color: #111827;
+}
+
+.wk-contact-title {
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 900;
+    color: #111827;
+    letter-spacing: -0.6px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.wk-contact-subtitle {
+    font-size: 1.08rem;
+    color: #4b5563;
+    line-height: 1.75;
+    max-width: 860px;
+}
+
+.wk-contact-hero-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+}
+
+    .wk-contact-hero-card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: #374151;
+        line-height: 1.85;
+    }
+
+.wk-contact-section {
+    background: #ffffff;
+}
+
+.wk-contact-alt {
+    background: #f9fafb;
+    border-top: 1px solid #eef2f7;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.wk-section-title {
+    font-weight: 900;
+    color: #111827;
+    margin: 0;
+    font-size: clamp(24px, 2vw, 34px);
+    letter-spacing: -0.4px;
+}
+
+.wk-section-subtitle {
+    margin-top: 10px;
+    color: #6b7280;
+    line-height: 1.8;
+    max-width: 900px;
+}
+
+.wk-contact-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+    .wk-contact-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 34px rgba(17,24,39,0.08);
+        border-color: #d1d5db;
+    }
+
+.wk-contact-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: #ffffff;
+    font-size: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 14px;
+}
+
+.wk-contact-card-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.wk-contact-card-text {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.wk-contact-panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+}
+
+.wk-contact-callout {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px 18px;
+    color: #374151;
+    line-height: 1.7;
+}
+
+.wk-contact-mini-list {
+    display: grid;
+    gap: 10px;
+}
+
+    .wk-contact-mini-list div {
+        color: #374151;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .wk-contact-mini-list i {
+        color: #2563eb;
+    }
+
+.wk-location-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+    .wk-location-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 34px rgba(17,24,39,0.08);
+        border-color: #d1d5db;
+    }
+
+.wk-location-title {
+    text-align: center;
+    font-weight: 900;
+    color: #111827;
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+    letter-spacing: .2px;
+}
+
+.wk-map-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+    .wk-map-wrap iframe {
+        width: 100%;
+        height: 300px;
+        border: 0;
+        display: block;
+    }
+
+.wk-contact-cta {
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.wk-contact-cta-box {
+    background: linear-gradient(120deg, #f8fafc 0%, #ffffff 55%, #f3f4f6 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.wk-contact-cta-title {
+    font-weight: 900;
+    margin: 0 0 6px;
+    color: #111827;
+}
+
+.wk-contact-cta-subtitle {
+    color: #6b7280;
+    line-height: 1.7;
+    max-width: 850px;
+}
+
+@media (max-width: 768px) {
+    .wk-map-wrap iframe {
+        height: 260px;
+    }
+}
+
+
+
+/* ===== PREMIUM OFFICE LOCATION CARDS ===== */
+
+.wk-office-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+    .wk-office-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 38px rgba(17,24,39,0.08);
+        border-color: #d1d5db;
+    }
+
+.wk-office-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.wk-office-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(17,24,39,0.06);
+    color: #111827;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+    .wk-office-badge i {
+        color: #2563eb;
+    }
+
+.wk-office-type {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+    padding-top: 4px;
+}
+
+.wk-office-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #111827;
+    margin: 0 0 8px;
+    letter-spacing: -0.2px;
+}
+
+.wk-office-text {
+    color: #6b7280;
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.wk-office-meta {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+    .wk-office-meta div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #374151;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .wk-office-meta i {
+        color: #2563eb;
+    }
+
+.wk-office-actions {
+    margin-bottom: 2px;
+}
+
+/* =========================================
+   CONTACT HERO MEDIA
+   ========================================= */
+
+.wk-contact-media {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+    .wk-contact-media:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(17,24,39,0.10);
+    }
+
+    /* subtle glow effect */
+
+    .wk-contact-media::before {
+        content: "";
+        position: absolute;
+        inset: -30%;
+        background: radial-gradient(circle at center, rgba(37,99,235,0.08), transparent 60%);
+        z-index: 0;
+    }
+
+.wk-contact-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.wk-contact-media-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(17,24,39,0.82);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    z-index: 2;
+}
