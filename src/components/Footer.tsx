@@ -79,7 +79,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
               <Mail size={20} className="text-brand-400 shrink-0" />
               <div>
                 <p className="text-white font-medium mb-1">Email Us</p>
-                <span>info@repligenai.com</span>
+                <span>info@repligenai.net</span>
               </div>
             </div>
 
@@ -87,7 +87,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
               <MapPin size={20} className="text-brand-400 shrink-0" />
               <div>
                 <p className="text-white font-medium mb-1">Headquarters</p>
-                <span>Overland Park, Kansas<br/>United States</span>
+                <span>8101 College Blvd.<br/>Overland Park, Kansas<br/>United States</span>
               </div>
             </div>
           </div>

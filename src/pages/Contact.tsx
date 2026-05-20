@@ -145,7 +145,7 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
                   </div>
                   <div className="flex flex-col justify-center">
                     <p className="text-white text-sm mb-1 font-medium tracking-wide">Global Headquarters</p>
-                    <p>Overland Park, Kansas, USA</p>
+                    <p>8101 College Blvd. <br/> Overland Park, Kansas, USA</p>
                   </div>
                 </div>
 
