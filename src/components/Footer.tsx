@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Linkedin, Twitter, Mail, MapPin, ArrowRight, Phone } from "lucide-react";
 
 export default function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
   const handleNav = (e: React.MouseEvent, page: string) => {
@@ -27,7 +27,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
           </div>
 
           <p className="text-slate-400 leading-relaxed text-sm">
-            Building enterprise-grade products, cloud-native platforms, and resilient SaaS infrastructure systems designed for long-term scalability and global enterprise impact.
+            We help organizations accelerate innovation by delivering exceptional IT staffing and technology solutions tailored for the modern digital enterprise.
           </p>
 
           <div className="flex gap-3 mt-8">
@@ -40,58 +40,65 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
           </div>
         </div>
 
-        {/* Offerings */}
+        {/* Quick Links */}
         <div>
-          <h4 className="text-white font-display font-semibold mb-6 tracking-wide">
-            OFFERINGS
+          <h4 className="text-white font-display font-semibold mb-6 tracking-wide uppercase">
+            Quick Links
           </h4>
           <ul className="space-y-4 text-sm text-slate-400">
-            <li><a href="#" onClick={(e) => handleNav(e, 'platforms')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Platforms</a></li>
-            <li><a href="#" onClick={(e) => handleNav(e, 'products')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Products</a></li>
-            <li><a href="#" onClick={(e) => handleNav(e, 'engineering')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Engineering</a></li>
-            <li><a href="#" onClick={(e) => handleNav(e, 'industries')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Industries</a></li>
-            <li><a href="#" className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Innovation</a></li>
-          </ul>
-        </div>
-
-        {/* Company */}
-        <div>
-          <h4 className="text-white font-display font-semibold mb-6 tracking-wide">
-            COMPANY
-          </h4>
-          <ul className="space-y-4 text-sm text-slate-400">
+            <li><a href="#" onClick={(e) => handleNav(e, 'home')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Home</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'about')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> About Us</a></li>
-            <li><a href="#" onClick={(e) => handleNav(e, 'governance')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Governance</a></li>
-            <li><a href="#" className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Insights</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Services</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'blog')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Blog</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'careers')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Careers</a></li>
-            <li><a href="#" onClick={(e) => handleNav(e, 'contact')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Contact</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'contact')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Contact Us</a></li>
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* IT Services */}
         <div>
-          <h4 className="text-white font-display font-semibold mb-6 tracking-wide">
-            GLOBAL REACH
+          <h4 className="text-white font-display font-semibold mb-6 tracking-wide uppercase">
+            IT Services
+          </h4>
+          <ul className="space-y-4 text-sm text-slate-400">
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Software Developers</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Databricks Engineer</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Data Analyst</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> AI/ML Engineer</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Data Engineer</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Programmer Analyst</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Data Scientist</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Us */}
+        <div>
+          <h4 className="text-white font-display font-semibold mb-6 tracking-wide uppercase">
+            Contact Us
           </h4>
 
           <div className="space-y-5 text-sm text-slate-400 bg-white/5 p-6 rounded-lg border border-white/10">
             <div className="flex items-start gap-4">
-              <Mail size={20} className="text-brand-400 shrink-0" />
+              <MapPin size={20} className="text-brand-400 shrink-0" />
               <div>
-                <p className="text-white font-medium mb-1">Email Us</p>
-                <span>info@repligenai.net</span>
+                <span>8101 College Blvd.<br/>Overland Park, KS 66210</span>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin size={20} className="text-brand-400 shrink-0" />
+              <Phone size={20} className="text-brand-400 shrink-0" />
               <div>
-                <p className="text-white font-medium mb-1">Headquarters</p>
-                <span>8101 College Blvd.<br/>Overland Park, Kansas<br/>United States</span>
+                <span>+1 (800) 555-0199</span>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Mail size={20} className="text-brand-400 shrink-0" />
+              <div>
+                <span>info@repligenai.net</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -99,18 +106,12 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
       <div className="border-t border-white/10 bg-black/20">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
           <p>
-            © {new Date().getFullYear()} RepligenAI Technologies Inc. All rights reserved.
+            Copyright {new Date().getFullYear()} RepligenAI. All Rights Reserved.
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0">
             <span className="hover:text-white transition cursor-pointer">
-              Privacy Policy
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              Terms of Service
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              Security Operations
+              Designed & Developed internally.
             </span>
           </div>
         </div>

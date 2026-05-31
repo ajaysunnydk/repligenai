@@ -9,6 +9,7 @@ interface NavbarProps {
 export default function Navbar({ onNavigate }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -17,12 +18,29 @@ export default function Navbar({ onNavigate }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { label: 'About', id: 'about' },
-    { label: 'Products', id: 'products' },
-    { label: 'Platforms', id: 'platforms' },
-    { label: 'Engineering', id: 'engineering' },
-    { label: 'Industries', id: 'industries' },
-    { label: 'Governance', id: 'governance' },
+    { label: 'Home', id: 'home' },
+    { label: 'About Us', id: 'about' },
+    { 
+      label: 'Services', 
+      id: 'services',
+      dropdown: [
+        { label: 'Software Developers', id: 'services' },
+        { label: 'Databricks Engineer', id: 'services' },
+        { label: 'Data Analyst', id: 'services' },
+        { label: 'AI/ML Engineer', id: 'services' },
+        { label: 'Data Engineer', id: 'services' },
+        { label: 'Programmer Analyst', id: 'services' },
+        { label: 'Data Scientist', id: 'services' },
+      ]
+    },
+    { 
+      label: 'Blog', 
+      id: 'blog',
+      dropdown: [
+        { label: 'Quantum Computing', id: 'blog' },
+        { label: 'No Code Low Code', id: 'blog' }
+      ]
+    },
     { label: 'Careers', id: 'careers' }
   ];
 
@@ -52,14 +70,41 @@ export default function Navbar({ onNavigate }: NavbarProps) {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
           {navLinks.map((link) => (
-            <button 
-              key={link.id}
-              onClick={() => onNavigate(link.id)} 
-              className="hover:text-white transition-colors relative group"
+            <div 
+              key={link.id + link.label}
+              className="relative group"
+              onMouseEnter={() => setActiveDropdown(link.label)}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all group-hover:w-full"></span>
-            </button>
+              <button 
+                onClick={() => onNavigate(link.id)} 
+                className="hover:text-white transition-colors relative flex items-center gap-1 py-2"
+              >
+                {link.label}
+                {link.dropdown && <ChevronDown size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-400 transition-all group-hover:w-full"></span>
+              </button>
+
+              {/* Desktop Dropdown */}
+              {link.dropdown && activeDropdown === link.label && (
+                <div className="absolute top-full left-0 mt-2 w-56 rounded-xl border border-white/10 bg-enterprise-darker shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="py-2">
+                    {link.dropdown.map((dropItem, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          onNavigate(dropItem.id);
+                        }}
+                        className="w-full text-left px-4 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                      >
+                        {dropItem.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -93,16 +138,39 @@ export default function Navbar({ onNavigate }: NavbarProps) {
           >
             <div className="p-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <button 
-                  key={link.id}
-                  onClick={() => {
-                    onNavigate(link.id);
-                    setMobileMenuOpen(false);
-                  }} 
-                  className="text-left text-lg text-slate-300 hover:text-white font-medium"
-                >
-                  {link.label}
-                </button>
+                <div key={link.id + link.label}>
+                  <button 
+                    onClick={() => {
+                      if (!link.dropdown) {
+                        onNavigate(link.id);
+                        setMobileMenuOpen(false);
+                      } else {
+                        setActiveDropdown(activeDropdown === link.label ? null : link.label);
+                      }
+                    }} 
+                    className="w-full text-left text-lg text-slate-300 hover:text-white font-medium flex justify-between items-center"
+                  >
+                    {link.label}
+                    {link.dropdown && <ChevronDown size={20} className={activeDropdown === link.label ? "rotate-180 transition-transform" : "transition-transform"} />}
+                  </button>
+                  
+                  {link.dropdown && activeDropdown === link.label && (
+                    <div className="mt-2 pl-4 flex flex-col gap-3 border-l border-white/10 ml-2">
+                      {link.dropdown.map((dropItem, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => {
+                            onNavigate(dropItem.id);
+                            setMobileMenuOpen(false);
+                          }}
+                          className="text-left text-base text-slate-400 hover:text-white"
+                        >
+                          {dropItem.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div className="h-px bg-white/10 my-2"></div>
               <button

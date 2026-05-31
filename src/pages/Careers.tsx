@@ -27,31 +27,48 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
   const openRoles: JobRole[] = [
     {
       id: "1",
-      title: "Senior Enterprise Architect",
-      department: "Engineering",
-      location: "Remote (Global)",
-      type: "Full-time",
-      description:
-        "Design scalable, fault-tolerant enterprise systems that serve as the backbone for Fortune 500 operations.",
+      title: "Data Scientist",
+      department: "Data Scientist",
+      location: "Remote (US)",
+      type: "FULL-TIME",
+      description: "qwer",
+      date: "1 weeks ago",
+      experience: "4+ Years",
+      vacancies: "1 Vacancies"
     },
     {
       id: "2",
-      title: "Platform Infrastructure Engineer",
-      department: "DevOps",
-      location: "Remote (Global)",
-      type: "Full-time",
-      description:
-        "Build and govern CI/CD pipelines, Kubernetes clusters, and cloud-native architectures with structural rigor.",
+      title: "Data Scientist",
+      department: "qwerty",
+      location: "Remote (US)",
+      type: "REMOTE",
+      description: "Analyze complex datasets to extract actionable insights and build predictive models.",
+      date: "Mar 9, 2025",
+      experience: "4+ Years",
+      vacancies: "2 Vacancies"
     },
     {
       id: "3",
-      title: "Technical Product Manager",
-      department: "Product",
-      location: "Remote (Global)",
-      type: "Full-time",
-      description:
-        "Align engineering execution with long-term strategic goals for enterprise platform capabilities.",
+      title: "Databricks Engineer",
+      department: "Engineering",
+      location: "Remote (US)",
+      type: "REMOTE",
+      description: "Design and optimize scalable data pipelines and analytics solutions using the Databricks unified platform.",
+      date: "Mar 9, 2025",
+      experience: "3+ Years",
+      vacancies: "3 Vacancies"
     },
+    {
+      id: "4",
+      title: "Senior AI/ML Engineer",
+      department: "AI & ML",
+      location: "Lenexa, KS (Hybrid)",
+      type: "FULL-TIME",
+      description: "Develop cutting-edge AI models and implement machine learning solutions for enterprise clients.",
+      date: "Mar 9, 2025",
+      experience: "5+ Years",
+      vacancies: "2 Vacancies"
+    }
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -65,25 +82,24 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/apply`,
+        // "https://getform.io/f/sk_ODc1MjIwNDgtMjQ4NC00Mzk1LWI0MDctNGZkY2Y4MzgxYzEx",
+        "https://forminit.com/f/hiv6h79q1ux",
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            "Accept": "application/json"
           },
           body: formData,
         }
       );
 
-      const result = await response.json();
-
       if (!response.ok) {
-        throw new Error(result.error || "Failed to submit application");
+        throw new Error("Failed to submit application");
       }
 
       form.reset();
       setSelectedRole(null);
-      setApplicationId(result.applicationId);
+      setApplicationId("APP-" + Math.floor(Math.random() * 1000000));
       setSubmitStatus("success");
     } catch (error) {
       setSubmitStatus("error");
@@ -156,7 +172,7 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
               animate={{ opacity: 1, y: 0 }}
               className="uppercase text-brand-400 tracking-[0.2em] mb-6 text-sm font-semibold flex justify-center items-center gap-2"
             >
-              <Terminal size={16} /> Engineering Ecosystem
+              <Briefcase size={16} /> IT Careers & Opportunities
             </motion.h4>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -164,7 +180,7 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-7xl font-display font-bold text-white tracking-tight leading-tight mb-8"
             >
-              Join the Core <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Engineering Group</span>
+              Join Our <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Expert Team</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -172,7 +188,7 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
               transition={{ delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed border-t border-white/10 pt-8"
             >
-              We are seeking engineers, architects, and product builders who value long-term structural integrity over short-term hacks.
+              We are seeking talented professionals who want to accelerate innovation and build cutting-edge solutions for the modern digital enterprise.
             </motion.p>
           </div>
         </section>
@@ -193,24 +209,37 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
                 {openRoles.map((role) => (
                   <div
                     key={role.id}
-                    className="group relative rounded-2xl border border-white/5 bg-enterprise-darker p-8 hover:border-brand-500/30 transition duration-300"
+                    className="group relative rounded-2xl border border-white/5 bg-enterprise-darker p-8 hover:border-brand-500/30 transition duration-300 shadow-lg"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none"></div>
 
-                    <h3 className="text-xl font-display font-semibold text-white mb-4 group-hover:text-brand-300 transition-colors">{role.title}</h3>
-
-                    <div className="flex flex-wrap gap-4 text-sm text-slate-400 mb-6 bg-white/5 p-3 rounded-lg border border-white/5">
-                      <span className="flex items-center gap-2">
-                        <Briefcase className="w-4 h-4 text-brand-500" />
-                        {role.department}
+                    <div className="flex justify-between items-center mb-6">
+                      <span className="text-xs font-bold uppercase tracking-widest text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
+                        {role.type}
                       </span>
+                      <span className="text-xs text-slate-500 flex items-center gap-1 font-medium">
+                        <Clock size={12} /> {role.date}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-display font-semibold text-white mb-3 group-hover:text-brand-300 transition-colors">{role.title}</h3>
+
+                    <div className="inline-flex items-center gap-2 text-xs text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20 mb-6">
+                      <CheckCircle size={12} /> {role.department}
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 text-sm text-slate-400 mb-6 font-medium">
                       <span className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-brand-500" />
                         {role.location}
                       </span>
                       <span className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-brand-500" />
-                        {role.type}
+                        <Briefcase className="w-4 h-4 text-brand-500" />
+                        {role.experience}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-brand-500" />
+                        {role.vacancies}
                       </span>
                     </div>
 
@@ -223,9 +252,9 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
                           .getElementById("application-form")
                           ?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className="text-sm font-bold uppercase tracking-widest text-brand-400 hover:text-brand-300 flex items-center gap-2 transition-colors"
+                      className="bg-brand-500 text-enterprise-darker px-6 py-2.5 rounded font-bold uppercase tracking-wide text-xs hover:bg-brand-400 transition-colors flex items-center gap-2 w-max shadow-[0_0_15px_rgba(20,184,166,0.15)]"
                     >
-                      Apply Now <ArrowRight size={16} />
+                      VIEW & APPLY <ArrowRight size={14} />
                     </button>
                   </div>
                 ))}
@@ -249,25 +278,25 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
 
                 <div className="relative z-10 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input label="Full Name *" name="fullName" required />
-                    <Input label="Email *" name="email" type="email" required />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input label="Phone" name="phone" />
-                    <Input label="Location Preference" name="locationPreference" />
+                    <Input label="Full Name *" name="fi-sender-fullName" required />
+                    <Input label="Email *" name="fi-sender-email" type="email" required />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input label="LinkedIn Profile URL" name="linkedinUrl" />
-                    <Input label="GitHub/Portfolio URL" name="portfolioUrl" />
+                   <Input label="Phone" name="fi-text-phone" />
+                    <Input label="Location Preference" name="fi-text-locationPreference" />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Input label="LinkedIn Profile URL" name="fi-text-linkedinUrl" />
+                    <Input label="GitHub/Portfolio URL" name="fi-text-portfolioUrl" />
                   </div>
 
                   <div className="h-px bg-white/10 my-6"></div>
 
                   <Select
                     label="Select Requisition *"
-                    name="roleApplied"
+                    name="fi-text-roleApplied"
                     value={selectedRole || ""}
                     onChange={(e) => setSelectedRole(e.target.value)}
                     required
@@ -280,7 +309,7 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
                     ))}
                   </Select>
 
-                  <Select label="Work Authorization" name="workAuthorization">
+                  <Select label="Work Authorization" name="fi-text-workAuthorization">
                     <option value="" className="bg-enterprise-dark">Select status</option>
                     <option className="bg-enterprise-dark">U.S. Citizen</option>
                     <option className="bg-enterprise-dark">Green Card</option>
@@ -290,28 +319,17 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
                   </Select>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Input
-                      label="Years Experience"
-                      name="yearsExperience"
-                      type="number"
-                    />
-                    <Input
-                      label="Expected Salary"
-                      name="salaryExpectations"
-                    />
-                    <Input
-                      label="Availability Date"
-                      name="availabilityDate"
-                      type="date"
-                    />
+                    <Input label="Years Experience" name="fi-text-yearsExperience" type="number" />
+                    <Input label="Expected Salary" name="fi-text-salaryExpectations" />
+                    <Input label="Availability Date" name="fi-text-availabilityDate" type="date" />
                   </div>
 
-                  <Textarea label="Cover Letter / Message" name="message" />
+                 <Textarea label="Cover Letter / Message" name="fi-text-message" />
 
                   <FileInput />
 
                   <label className="flex items-start gap-3 text-sm text-slate-400 mt-6 bg-white/5 p-4 rounded-lg border border-white/5">
-                    <input type="checkbox" name="consent" required className="mt-1 accent-brand-500" />
+                    <input type="checkbox" name="fi-text-consent" required className="mt-1 accent-brand-500" />
                     I consent to RepligenAI storing my engineering profile and contacting me regarding enterprise opportunities.
                   </label>
 
@@ -403,7 +421,7 @@ function FileInput() {
       <div className="relative group">
         <input
           type="file"
-          name="resume"
+          name="fi-file-resume"
           required
           className="w-full bg-enterprise-dark border border-white/10 rounded-lg px-4 py-3 text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-brand-500/10 file:text-brand-400 hover:file:bg-brand-500/20 cursor-pointer focus:border-brand-500 outline-none transition-colors"
         />

@@ -21,7 +21,7 @@ export default function About({ onNavigate }: { onNavigate: (page: string) => vo
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-5xl md:text-7xl font-display font-bold text-white mb-8 drop-shadow-lg"
             >
-              Building Enterprise Products <br className="hidden md:block"/> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Structural Integrity</span>
+              Accelerating Innovation <br className="hidden md:block"/> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">AI & IT Solutions</span>
             </motion.h1>
 
             <motion.p 
@@ -30,7 +30,7 @@ export default function About({ onNavigate }: { onNavigate: (page: string) => vo
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="mt-8 text-slate-300 max-w-3xl mx-auto text-xl font-light leading-relaxed"
             >
-              Enterprise product development requires long-term thinking, rigorous governance, and scalable architecture.
+              Accelerate your business with cutting-edge artificial intelligence and software innovations. Seamlessly integrate intelligent systems to optimize operations.
             </motion.p>
           </div>
         </section>
@@ -63,15 +63,15 @@ export default function About({ onNavigate }: { onNavigate: (page: string) => vo
                 What Defines Us
               </h4>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">
-                Enterprise Product Development with <span className="italic font-light">Long-Term Thinking</span>
+                Exceptional IT Staffing and <span className="italic font-light">Technology Solutions</span>
               </h2>
 
               <p className="text-slate-400 leading-relaxed text-lg mb-6">
-                RepligenAI exists to architect, develop, and govern enterprise-grade software systems that form the foundation of scalable organizations.
+                We help organizations accelerate innovation by delivering exceptional IT staffing and technology solutions tailored for the modern digital enterprise.
               </p>
 
               <p className="text-slate-400 leading-relaxed text-lg mb-8 border-l-2 border-brand-500/30 pl-6">
-                We believe that software should not just solve immediate problems—it should be built with the structural foresight to handle future scale, security demands, and operational complexity.
+                As a specialized IT staffing and consulting company, we excel in connecting businesses with highly skilled technology professionals who drive transformation, efficiency, and long-term growth. Our expertise spans Artificial Intelligence, Generative AI, software development, cloud computing, cybersecurity, DevOps, data engineering, and enterprise technologies.
               </p>
             </motion.div>
           </div>
@@ -87,7 +87,7 @@ export default function About({ onNavigate }: { onNavigate: (page: string) => vo
                 Core Principles
               </h4>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
-                Our Foundation
+                How We Deliver Value
               </h2>
             </div>
 
@@ -95,18 +95,18 @@ export default function About({ onNavigate }: { onNavigate: (page: string) => vo
               {[
                 {
                   icon: <Box size={32} className="text-brand-400" />,
-                  title: "Architectural Rigor",
-                  desc: "We prioritize clean code, modular design, and scalable infrastructure to ensure systems can evolve without technical debt."
-                },
-                {
-                  icon: <Shield size={32} className="text-brand-400" />,
-                  title: "Security & Governance",
-                  desc: "Security is not an afterthought. It is embedded into our deployment pipelines, data structures, and operational workflows."
+                  title: "Scalable Architecture",
+                  desc: "Build software that grows with your business. Our solutions are designed with scalability in mind, ensuring seamless adaptation without sacrificing performance."
                 },
                 {
                   icon: <Zap size={32} className="text-brand-400" />,
-                  title: "Operational Excellence",
-                  desc: "We build for high availability and performance, ensuring that our products meet the stringent demands of global enterprises."
+                  title: "Agile Methodology",
+                  desc: "We use Agile practices to ensure flexibility and rapid delivery of high-quality software, adjusting quickly to changing requirements with iterative development."
+                },
+                {
+                  icon: <Shield size={32} className="text-brand-400" />,
+                  title: "Advanced Security",
+                  desc: "Security is at the core of our development. We integrate best practices for data protection and secure coding to ensure your software is safe from vulnerabilities."
                 }
               ].map((value, idx) => (
                 <motion.div
@@ -140,14 +140,17 @@ export default function About({ onNavigate }: { onNavigate: (page: string) => vo
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-900/20"></div>
           <div className="max-w-3xl mx-auto px-6 relative z-10">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">
-              Why RepligenAI Exists
+              Partner with Us Today
             </h2>
             <p className="text-xl text-slate-300 font-light mb-12">
-              To provide the engineering maturity required to run the future of global business operations.
+              Empower your business with AI-driven software solutions and connect with the right talent to succeed in today’s competitive landscape.
             </p>
 
-            <button className="bg-brand-500 hover:bg-brand-400 text-enterprise-darker px-10 py-5 text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center gap-3 mx-auto uppercase">
-              Join Our Vision <ArrowRight size={18} />
+            <button 
+              onClick={() => onNavigate('contact')}
+              className="bg-brand-500 hover:bg-brand-400 text-enterprise-darker px-10 py-5 text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] flex items-center gap-3 mx-auto uppercase"
+            >
+              Contact Us <ArrowRight size={18} />
             </button>
           </div>
         </section>

@@ -30,6 +30,9 @@ export interface JobRole {
   title: string;
   department: string;
   location: string;
-  type: 'Full-time' | 'Part-time' | 'Contract';
+  type: string;
   description: string;
+  date: string;
+  experience: string;
+  vacancies: string;
 }

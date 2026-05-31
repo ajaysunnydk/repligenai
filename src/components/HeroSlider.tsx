@@ -12,18 +12,18 @@ import slide3 from '../assets/videos/slide3.mp4';
 const slides = [
   {
     video: slide1,
-    title: "Build the Future of Enterprise SaaS Infrastructure",
-    subtitle: "RepligenAI is building enterprise-grade products, cloud-native platforms, and resilient SaaS infrastructure systems designed for long-term scalability, operational maturity, and global enterprise impact."
+    title: "Empowering Your Business with AI-Driven Solutions",
+    subtitle: "Accelerate your business with cutting-edge artificial intelligence and software innovations."
   },
   {
     video: slide2,
-    title: "Engineering Excellence as a Standard",
-    subtitle: "Our systems operate through structured engineering governance, architecture-first principles, and measurable performance frameworks. Clean, modular, and secure systems."
+    title: "Intelligent Systems Integration",
+    subtitle: "Seamlessly integrate intelligent systems to optimize operations, enhance customer experiences, and drive sustainable growth."
   },
   {
     video: slide3,
-    title: "Long-Term Platform Impact",
-    subtitle: "We build systems designed to evolve over years, not weeks. Contributing to enduring infrastructure and enterprise-grade digital products with global relevance."
+    title: "Tailored Technology Capabilities",
+    subtitle: "We provide the right talent and technology capabilities needed to succeed in today’s competitive landscape."
   }
 ];
 
@@ -80,7 +80,7 @@ export default function HeroSlider({ onNavigate }: HeroSliderProps) {
             >
               <h4 className="uppercase text-brand-400 tracking-[0.2em] mb-6 text-sm font-semibold flex items-center gap-3">
                 <span className="w-8 h-[1px] bg-brand-400"></span>
-                Architecture-First Engineering
+                Innovation & Excellence
               </h4>
 
               <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] text-white mb-6 drop-shadow-lg">
@@ -93,17 +93,17 @@ export default function HeroSlider({ onNavigate }: HeroSliderProps) {
 
               <div className="flex flex-wrap gap-4">
                 <button
-                  onClick={() => onNavigate("engineering")}
+                  onClick={() => onNavigate("services")}
                   className="bg-brand-500 hover:bg-brand-400 text-enterprise-darker px-8 py-4 text-sm font-bold tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:shadow-[0_0_30px_rgba(20,184,166,0.4)]"
                 >
-                  Explore Engineering
+                  Explore Services
                 </button>
 
                 <button
-                  onClick={() => onNavigate("platforms")}
+                  onClick={() => onNavigate("about")}
                   className="glass hover:bg-white/10 px-8 py-4 text-sm font-bold text-white tracking-wide transition-all duration-300"
                 >
-                  View Platforms
+                  About Us
                 </button>
               </div>
             </motion.div>

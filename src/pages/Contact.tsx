@@ -10,7 +10,8 @@ import {
   AlertCircle,
   Loader2,
   ArrowRight,
-  MessageSquare
+  MessageSquare,
+  Phone
 } from "lucide-react";
 
 export default function Contact({ onNavigate }: { onNavigate: (page: string) => void }) {
@@ -26,11 +27,36 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
     setSubmitStatus("idle");
     setErrorMessage("");
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    // You will need to add VITE_WEB3FORMS_ACCESS_KEY to your .env file
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "3bb6459f-b0e6-46e4-b528-2529ba83bbe9");
 
-    setIsSubmitting(false);
-    setSubmitStatus("success");
-    e.currentTarget.reset();
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json"
+        },
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus("success");
+        form.reset();
+      } else {
+        setSubmitStatus("error");
+        setErrorMessage(data.message || "Failed to transmit inquiry.");
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitStatus("error");
+      setErrorMessage("Network error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   /* ---------------- SUCCESS STATE ---------------- */
@@ -88,7 +114,7 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
               animate={{ opacity: 1, y: 0 }}
               className="uppercase text-brand-400 tracking-[0.2em] mb-6 text-sm font-semibold flex justify-center items-center gap-2"
             >
-              <MessageSquare size={16} /> Engage With Us
+              <MessageSquare size={16} /> Contact Us
             </motion.h4>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -96,7 +122,7 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-7xl font-display font-bold text-white tracking-tight leading-tight mb-8"
             >
-              Initiate <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Consultation</span>
+              Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Touch</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -104,7 +130,7 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
               transition={{ delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed border-t border-white/10 pt-8"
             >
-              Whether you are modernizing a legacy platform or scaling a new enterprise system, we provide the architectural rigor to get it right.
+              We assist organizations in accelerating innovation by providing exceptional IT staffing and technology solutions tailored for the modern digital enterprise. Let us help you streamline your business communication and drive meaningful process improvements.
             </motion.p>
           </div>
         </section>
@@ -120,50 +146,47 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
               transition={{ delay: 0.3 }}
             >
               <h2 className="text-3xl font-display font-semibold text-white mb-10">
-                Direct Channels
+                Contact Information
               </h2>
 
               <div className="space-y-8 text-slate-400">
                 <div className="flex gap-4 group">
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-500/50 group-hover:bg-brand-500/10 transition-colors">
-                    <Mail className="w-5 h-5 text-brand-400" />
+                    <MapPin className="w-5 h-5 text-brand-400" />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <p className="text-white text-sm mb-1 font-medium tracking-wide">Enterprise Inquiries</p>
+                    <p className="text-white text-sm mb-1 font-medium tracking-wide">Our Office Address</p>
+                    <p>8101 College Blvd. <br/> Overland Park, Kansas, USA</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-500/50 group-hover:bg-brand-500/10 transition-colors">
+                    <Phone className="w-5 h-5 text-brand-400" />
+                  </div>
+                  <div className="flex flex-col justify-center">
+                    <p className="text-white text-sm mb-1 font-medium tracking-wide">Call Us Anytime</p>
                     <a
-                      href="mailto:contact@repligenai.net"
+                      href="tel:+18005550199"
                       className="hover:text-brand-400 transition-colors"
                     >
-                      contact@repligenai.net
+                      +1 (800) 555-0199
                     </a>
                   </div>
                 </div>
 
                 <div className="flex gap-4 group">
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-500/50 group-hover:bg-brand-500/10 transition-colors">
-                    <MapPin className="w-5 h-5 text-brand-400" />
+                    <Mail className="w-5 h-5 text-brand-400" />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <p className="text-white text-sm mb-1 font-medium tracking-wide">Global Headquarters</p>
-                    <p>8101 College Blvd. <br/> Overland Park, Kansas, USA</p>
-                  </div>
-                </div>
-
-                <div className="relative mt-12 rounded-2xl border border-brand-500/20 bg-brand-500/5 p-8 overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Calendar className="w-6 h-6 text-brand-400" />
-                      <p className="text-white font-display font-semibold text-xl">
-                        Schedule Strategy Session
-                      </p>
-                    </div>
-                    <p className="text-sm text-slate-400 mb-8 leading-relaxed">
-                      Book a technical consultation with our engineering leadership to discuss architecture, scale, and enterprise deployment.
-                    </p>
-                    <button className="flex items-center gap-2 rounded-full border border-brand-500/50 bg-enterprise-darker px-6 py-3 text-sm text-brand-400 hover:bg-brand-500/10 transition-colors w-full justify-center font-semibold tracking-wide">
-                      Select Time <ArrowRight size={16} />
-                    </button>
+                    <p className="text-white text-sm mb-1 font-medium tracking-wide">Send An Email</p>
+                    <a
+                      href="mailto:contact@repligenai.net"
+                      className="hover:text-brand-400 transition-colors"
+                    >
+                      contact@repligenai.net
+                    </a>
                   </div>
                 </div>
               </div>
