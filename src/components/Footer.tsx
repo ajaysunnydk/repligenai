@@ -88,7 +88,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
             <div className="flex items-start gap-4">
               <Phone size={20} className="text-brand-400 shrink-0" />
               <div>
-                <span>+1 (800) 555-0199</span>
+                <span>+1 (913) 448-7265</span>
               </div>
             </div>
 

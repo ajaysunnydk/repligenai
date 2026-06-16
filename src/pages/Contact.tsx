@@ -167,10 +167,10 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
                   <div className="flex flex-col justify-center">
                     <p className="text-white text-sm mb-1 font-medium tracking-wide">Call Us Anytime</p>
                     <a
-                      href="tel:+18005550199"
+                      href="tel:+19134487265"
                       className="hover:text-brand-400 transition-colors"
                     >
-                      +1 (800) 555-0199
+                      +1 (913) 448-7265
                     </a>
                   </div>
                 </div>
