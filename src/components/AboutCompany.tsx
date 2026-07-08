@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export default function AboutCompany() {
+export default function AboutCompany({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <section className="py-32 bg-enterprise-darker relative overflow-hidden">
       <div className="absolute right-0 top-1/2 w-1/2 h-full bg-brand-500/5 blur-[150px] rounded-full -translate-y-1/2 pointer-events-none"></div>
@@ -72,7 +72,10 @@ export default function AboutCompany() {
             ))}
           </ul>
 
-          <button className="group flex items-center gap-3 text-brand-400 font-bold tracking-wide uppercase text-sm hover:text-brand-300 transition-colors">
+          <button
+            onClick={() => onNavigate?.('about')}
+            className="group flex items-center gap-3 text-brand-400 font-bold tracking-wide uppercase text-sm hover:text-brand-300 transition-colors"
+          >
             Discover Our Foundation
             <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
           </button>

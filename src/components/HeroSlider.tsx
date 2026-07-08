@@ -100,10 +100,10 @@ export default function HeroSlider({ onNavigate }: HeroSliderProps) {
                 </button>
 
                 <button
-                  onClick={() => onNavigate("about")}
+                  onClick={() => onNavigate("products")}
                   className="glass hover:bg-white/10 px-8 py-4 text-sm font-bold text-white tracking-wide transition-all duration-300"
                 >
-                  About Us
+                  See Our Products
                 </button>
               </div>
             </motion.div>

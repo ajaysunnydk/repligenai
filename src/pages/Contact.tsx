@@ -182,10 +182,10 @@ export default function Contact({ onNavigate }: { onNavigate: (page: string) => 
                   <div className="flex flex-col justify-center">
                     <p className="text-white text-sm mb-1 font-medium tracking-wide">Send An Email</p>
                     <a
-                      href="mailto:contact@repligenai.net"
+                      href="mailto:info@repligenai.net"
                       className="hover:text-brand-400 transition-colors"
                     >
-                      contact@repligenai.net
+                      info@repligenai.net
                     </a>
                   </div>
                 </div>

@@ -31,10 +31,10 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
           </p>
 
           <div className="flex gap-3 mt-8">
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-all">
+            <a href="#" aria-label="RepligenAI on LinkedIn" className="w-10 h-10 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-all">
               <Linkedin size={18} />
             </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-all">
+            <a href="#" aria-label="RepligenAI on Twitter" className="w-10 h-10 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-all">
               <Twitter size={18} />
             </a>
           </div>
@@ -49,6 +49,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
             <li><a href="#" onClick={(e) => handleNav(e, 'home')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Home</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'about')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> About Us</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'services')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Services</a></li>
+            <li><a href="#" onClick={(e) => handleNav(e, 'products')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Products</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'blog')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Blog</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'careers')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Careers</a></li>
             <li><a href="#" onClick={(e) => handleNav(e, 'contact')} className="hover:text-brand-400 transition-colors flex items-center gap-2"><ArrowRight size={14} /> Contact Us</a></li>
@@ -109,10 +110,15 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
             Copyright {new Date().getFullYear()} RepligenAI. All Rights Reserved.
           </p>
 
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-white transition cursor-pointer">
-              Designed & Developed internally.
-            </span>
+          <div className="flex gap-6 mt-4 md:mt-0 items-center">
+            <a href="#" onClick={(e) => handleNav(e, 'privacy')} className="hover:text-white transition">
+              Privacy Policy
+            </a>
+            <a href="#" onClick={(e) => handleNav(e, 'terms')} className="hover:text-white transition">
+              Terms of Service
+            </a>
+            <span className="hidden md:inline text-slate-600">|</span>
+            <span>Designed & Developed internally.</span>
           </div>
         </div>
       </div>

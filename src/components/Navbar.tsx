@@ -33,8 +33,18 @@ export default function Navbar({ onNavigate }: NavbarProps) {
         { label: 'Data Scientist', id: 'services' },
       ]
     },
-    { 
-      label: 'Blog', 
+    {
+      label: 'Products',
+      id: 'products',
+      dropdown: [
+        { label: 'TalentLens — AI Screening', id: 'products' },
+        { label: 'QueryPilot — NL Analytics', id: 'products' },
+        { label: 'PipeWatch — Data Observability', id: 'products' },
+        { label: 'BenchBoard — Workforce Mgmt', id: 'products' },
+      ]
+    },
+    {
+      label: 'Blog',
       id: 'blog',
       dropdown: [
         { label: 'Quantum Computing', id: 'blog' },
