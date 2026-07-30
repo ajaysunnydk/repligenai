@@ -26,6 +26,19 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
 
   const openRoles: JobRole[] = [
     {
+      id: "5",
+      title: "HR & Immigration Specialist (US IT Staffing & Consulting)",
+      department: "Human Resources",
+      location: "Remote / Hybrid (US)",
+      type: "FULL-TIME",
+      description:
+        "Manage HR operations, US immigration processes, recruitment, onboarding, and employee relations. Coordinate H-1B, STEM OPT, CPT, TN, LCA, PERM, I-140, and EAD processes with attorneys while maintaining immigration compliance.",
+      date: "Just posted",
+      experience: "2+ Years",
+      vacancies: "1 Vacancies",
+      isNew: true
+    },
+    {
       id: "1",
       title: "Data Scientist",
       department: "Data Scientist",
@@ -214,9 +227,20 @@ export default function Careers({ onNavigate }: { onNavigate: (page: string) => 
                     <div className="absolute inset-0 bg-gradient-to-r from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none"></div>
 
                     <div className="flex justify-between items-center mb-6">
-                      <span className="text-xs font-bold uppercase tracking-widest text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-                        {role.type}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold uppercase tracking-widest text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
+                          {role.type}
+                        </span>
+                        {role.isNew && (
+                          <span className="relative text-xs font-bold uppercase tracking-widest text-emerald-300 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-400/30 flex items-center gap-1.5">
+                            <span className="relative flex h-2 w-2">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                            </span>
+                            New
+                          </span>
+                        )}
+                      </div>
                       <span className="text-xs text-slate-500 flex items-center gap-1 font-medium">
                         <Clock size={12} /> {role.date}
                       </span>

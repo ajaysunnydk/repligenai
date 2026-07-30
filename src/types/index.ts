@@ -35,4 +35,5 @@ export interface JobRole {
   date: string;
   experience: string;
   vacancies: string;
+  isNew?: boolean;
 }
